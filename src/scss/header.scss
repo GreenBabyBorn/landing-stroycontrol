@@ -1,0 +1,186 @@
+//------------------------------
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  padding: 10px 0;
+
+  @include adaptiveValue("height", 96, 66);
+  background-color: white;
+  &__container {
+    @include adaptiveValue("height", 76, 46);
+    display: flex;
+    align-items: center;
+    max-width: 1440px;
+  }
+  &__logo {
+    z-index: 6;
+    position: relative;
+    @include adaptiveValue("font-size", 22, 18);
+  }
+  &__menu {
+    flex: 1 1 auto;
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: rem(34);
+    flex: 0 1 rem(144);
+    background: $darkColor;
+    color: white;
+    border-radius: 4px;
+    font-family: Arial;
+    font-size: rem(15);
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: transparent;
+        color: $darkColor;
+        outline: 1px solid black;
+      }
+    }
+    @media (max-width: $pc) {
+      flex: 0 1 rem(120);
+    }
+    @media (max-width: $tablet) {
+      margin-top: rem(20);
+      @include adaptiveValue("font-size", 24, 18);
+      height: rem(40);
+    }
+  }
+}
+.page,
+.footer {
+  transition: all 0.3s ease 0s;
+}
+.menu-open .page,
+.menu-open .footer {
+  filter: blur(10px);
+}
+.menu {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+
+  @include adaptiveValue("column-gap", 22, 10, 1920, 991.98, 1);
+  &__icon {
+  }
+  &__body {
+    @media (max-width: $tablet) {
+      position: fixed;
+      overflow: auto;
+      padding: rem(90) rem(15) rem(50) rem(15);
+      background-color: rgba($color: #ffffff, $alpha: 0.7);
+      z-index: 5;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      left: -100%;
+      transition: left 0.3s ease 0s;
+
+      &::before {
+        position: fixed;
+        content: "";
+        width: 100%;
+        top: 0;
+        left: -100%;
+
+        @include adaptiveValue("height", 96, 66);
+        background-color: rgba($color: #ffffff, $alpha: 1);
+        //   backdrop-filter: blur(5px);
+      }
+    }
+    .menu-open & {
+      left: 0%;
+      &::before {
+        left: 0%;
+      }
+    }
+    //  @include adaptiveValue("padding-right", 20, 0);
+  }
+  &__list {
+    display: flex;
+    row-gap: 5px;
+    @include adaptiveValue("column-gap", 22, 5, 1440, 991.98, 1);
+    flex-wrap: wrap;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      row-gap: rem(20);
+    }
+  }
+  &__item {
+  }
+  &__link {
+    font-size: rem(16);
+    color: #72787d;
+    transition: all 0.3s ease 0s;
+    ._navigator-active & {
+      color: #2c70c1;
+      // font-weight: 600;
+    }
+    @media (max-width: $tablet) {
+      @include adaptiveValue("font-size", 24, 18);
+      color: $darkColor;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: #036fc7;
+      }
+    }
+  }
+}
+
+//Burger
+
+.icon-menu {
+  display: none;
+  @media (max-width: $tablet) {
+    display: flex;
+    position: relative;
+    flex: 0 0 rem(40);
+    height: 20px;
+    cursor: pointer;
+    z-index: 5;
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      left: 0px;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      border-radius: 5px;
+      background-color: #000;
+    }
+    &::before {
+      top: 0px;
+    }
+    &::after {
+      bottom: 0px;
+    }
+    span {
+      top: calc(50% - 1px);
+    }
+    .menu-open & {
+      span {
+        transform: scale(0);
+      }
+      &::before {
+        transform: rotate(-45deg);
+        top: calc(50% - 1px);
+      }
+      &::after {
+        transform: rotate(45deg);
+        bottom: calc(50% - 1px);
+      }
+    }
+  }
+}

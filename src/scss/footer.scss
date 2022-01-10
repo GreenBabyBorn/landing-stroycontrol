@@ -1,0 +1,115 @@
+.footer {
+  &__container {
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    @include adaptiveValue("margin-bottom", 160, 30);
+    margin: 0px 0px rem(160) 0px;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("row-gap", 22, 16);
+
+    align-items: flex-start;
+  }
+  &__logo {
+    font-size: rem(16);
+  }
+  &__adress {
+    line-height: em(24, 16);
+  }
+  &__email {
+    line-height: em(24, 16);
+    transition: color 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $yellowCoolor;
+      }
+    }
+  }
+  &__phone {
+    margin-top: rem(-22);
+    line-height: em(24, 16);
+    transition: color 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $yellowCoolor;
+      }
+    }
+  }
+  &__facebook {
+    flex: 0 1 24px;
+    path {
+      transition: all 0.3s ease 0s;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        path {
+          fill: blue;
+        }
+      }
+    }
+  }
+
+  &__content {
+    @include adaptiveValue("padding-top", 10, 25);
+    //  padding: rem(10) 0px 0px 0px;
+  }
+
+  .content-footer {
+    &__title {
+      color: #212b31;
+      line-height: em(24, 16);
+      // padding: 0px 0px rem(22) 0px;
+      @include adaptiveValue("padding-bottom", 22, 10);
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(8);
+    }
+    &__item {
+    }
+    &__link {
+      font-size: rem(15);
+      line-height: em(24, 15);
+      transition: all 0.3s ease 0s;
+      @media (any-hover: hover) {
+        &:hover {
+          color: $yellowCoolor;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    line-height: em(24, 15);
+    padding: rem(30) 0px;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      padding: rem(15) 0px;
+      font-size: rem(12);
+      align-items: center;
+    }
+  }
+  &__copyright {
+    @media (max-width: $mobile) {
+      margin: 0px 0px rem(15) 0px;
+    }
+  }
+  &__policy {
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $yellowCoolor;
+      }
+    }
+  }
+}

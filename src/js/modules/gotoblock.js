@@ -1,0 +1,36 @@
+// Импорт функционала ====================================================================================================================================================================================================================================================================================================
+// Вспомогательные функции
+// import { isMobile } from "../functions.js";
+//==============================================================================================================================================================================================================================================================================================================================
+
+/* 
+Модуль плавной проктутки к блоку
+Документация:
+*/
+
+// Подключение дополнения
+import "../libs/smoothScroll.js";
+// Функция
+export let gotoBlock = (
+  targetBlock,
+  noHeader = false,
+  speed = 100,
+  offset = 0
+) => {
+  let headerItem = "";
+  //OffsetHeader
+  if (noHeader) {
+    headerItem = "header.header";
+  }
+  let options = {
+    speedAsDuration: false,
+    speed: speed,
+    header: headerItem,
+    offset: offset,
+    easing: "easeInOutQuart",
+  };
+  const targetBlockElement = document.querySelector(targetBlock);
+  targetBlockElement
+    ? new SmoothScroll().animateScroll(targetBlockElement, "", options)
+    : console.log(`[gotoBlock] - Такого блока нет: ${targetBlock}`);
+};
