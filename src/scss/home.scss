@@ -519,7 +519,7 @@ hr {
       @include adaptiveValue("margin-bottom", 17, 10);
     }
     &::after {
-      content: url("../img/reliability/icon.svg");
+      content: url("@img/reliability/icon.svg");
       position: absolute;
       @include adaptiveValue("top", -18, -25);
       @include adaptiveValue("right", -35, -38);
@@ -853,7 +853,7 @@ hr {
   &__slide {
     position: relative;
     &::before {
-      content: url("../img/comments/background.png");
+      content: url("@img/comments/background.png");
       position: absolute;
       z-index: 1;
     }
@@ -979,7 +979,7 @@ hr {
   @include adaptiveValue("margin-bottom", 149, 50);
 
   &__container {
-    background: url("../img/optimization/optimization.png");
+    background: url("@img/optimization/optimization.png");
     background-size: cover;
     @include adaptiveValue("height", 466, 300);
 

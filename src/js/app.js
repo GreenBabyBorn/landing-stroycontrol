@@ -1,5 +1,7 @@
 import * as functions from "./modules/functions.js";
 
+// import "../scss/style.scss";
+
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 /* (i) необходимо для корректного отображения webp из css  */
 functions.isWebp();
@@ -26,6 +28,8 @@ Scroll.scrollWatcher(false);
 
 // Плавная навигация по странице
 Scroll.pageNavigation();
+
+functions.spollers();
 
 const menuLinks = document.querySelectorAll(".menu__item");
 

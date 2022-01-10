@@ -4,8 +4,8 @@
   &__top {
     display: flex;
     justify-content: space-between;
-    @include adaptiveValue("margin-bottom", 160, 30);
-    margin: 0px 0px rem(160) 0px;
+    @include adaptiveValue("margin-bottom", 160, 0);
+
     @media (max-width: $mobile) {
       flex-direction: column;
     }
@@ -65,15 +65,43 @@
     &__title {
       color: #212b31;
       line-height: em(24, 16);
+
       // padding: 0px 0px rem(22) 0px;
-      @include adaptiveValue("padding-bottom", 22, 10);
+      // @include adaptiveValue("padding-bottom", 22, 10);
+      @media (min-width: $mobile) {
+        padding: 0px 0px rem(22) 0px;
+      }
+      position: relative;
+      transition: all 0.3s ease 0s;
+      @media (max-width: $mobile) {
+        &._spoller-active {
+          margin: 0px 0px rem(15) 0px;
+        }
+        &._spoller-active::after {
+          transform: rotate(90deg);
+        }
+        &::after {
+          content: url("@img/icons/arrow.svg");
+          position: absolute;
+          top: 0;
+          left: 95%;
+          transform: rotate(-90deg);
+          transition: all 0.3s ease 0s;
+
+          width: rem(13);
+          height: rem(24);
+          // margin: 0px 15px 0px 0px;
+          // width: 100%;
+        }
+      }
     }
+
     &__list {
-      display: flex;
-      flex-direction: column;
-      row-gap: rem(8);
     }
     &__item {
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+      }
     }
     &__link {
       font-size: rem(15);
