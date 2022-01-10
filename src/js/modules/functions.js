@@ -362,3 +362,13 @@ export function spollers() {
     }
   }
 }
+// Получение хеша в адресе сайта
+export function getHash() {
+  if (location.hash) {
+    return location.hash.replace("#", "");
+  }
+}
+// Указание хеша в адресе сайта
+export function setHash(hash) {
+  history.pushState("", "", hash);
+}

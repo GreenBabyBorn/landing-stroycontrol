@@ -413,7 +413,7 @@ hr {
   &__title {
     @include adaptiveValue("font-size", 32, 20);
     text-align: center;
-    color: #212b31;
+    color: $darkColor;
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 21, 10);
     }

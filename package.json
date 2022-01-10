@@ -13,6 +13,7 @@
   "author": "GreenBabyBorn",
   "license": "ISC",
   "devDependencies": {
+    "aos": "^3.0.0-beta.6",
     "babel-loader": "latest",
     "browser-sync": "latest",
     "css-loader": "latest",
@@ -41,6 +42,7 @@
     "gulp-zip": "latest",
     "sass": "latest",
     "sass-loader": "latest",
+    "simplebar": "^5.3.6",
     "string-replace-loader": "latest",
     "style-loader": "latest",
     "swiper": "latest",

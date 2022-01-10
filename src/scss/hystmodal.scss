@@ -1,0 +1,261 @@
+.hystmodal__opened {
+  position: fixed;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+}
+.hystmodal__shadow {
+  position: fixed;
+  border: none;
+  display: block;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 98;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  background-color: black;
+}
+.hystmodal__shadow--show {
+  pointer-events: auto;
+  opacity: 0.6;
+}
+.hystmodal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  opacity: 1;
+  pointer-events: none;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  z-index: 99;
+  visibility: hidden;
+}
+.hystmodal--active {
+  opacity: 1;
+}
+.hystmodal--moved,
+.hystmodal--active {
+  pointer-events: auto;
+  visibility: visible;
+}
+.hystmodal__wrap {
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 100%;
+  min-height: 100%;
+  margin: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.hystmodal__window {
+  margin: 50px 0;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  flex-grow: 0;
+  background: #fff;
+  width: 600px;
+  max-width: 100%;
+  overflow: visible;
+  transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+  transform: scale(0.9);
+  opacity: 0;
+}
+.hystmodal--active .hystmodal__window {
+  transform: scale(1);
+  opacity: 1;
+}
+.hystmodal__close {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: -40px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' stroke='%23fff' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M22 2L2 22'/%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M2 2l20 20'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  border: none;
+  font-size: 0;
+  cursor: pointer;
+  outline: none;
+}
+.hystmodal__close:focus {
+  outline: 2px dotted #afb3b9;
+  outline-offset: 2px;
+}
+@media all and (max-width: 767px) {
+  .hystmodal__close {
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' stroke='%23111' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M22 2L2 22'/%3E%3Cpath fill='none' stroke='%23111' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M2 2l20 20'/%3E%3C/svg%3E");
+  }
+  .hystmodal__window {
+    margin: 0;
+  }
+}
+//========================================================================================================================================================
+
+.more {
+  display: flex;
+  flex-direction: column;
+  @include adaptiveValue("padding", 50, 20);
+  gap: 20px;
+
+  &__logo {
+    @include adaptiveValue("font-size", 32, 20);
+    line-height: em(48, 32);
+    color: $darkColor;
+    align-self: center;
+  }
+  &__text {
+    @include adaptiveValue("font-size", 20, 16);
+    line-height: em(32, 20);
+    text-align: right;
+  }
+}
+//========================================================================================================================================================
+
+.hystmodal__window--form {
+  width: 440px;
+  max-width: 100%;
+  background: linear-gradient(216.25deg, #ffffff 0%, #f3f3f3 100%), #fcfcfc;
+  box-shadow: 0px 0px 6px rgba(51, 66, 94, 0.5);
+  padding: 7rem 9rem;
+}
+.loginblock__h1 {
+  margin-bottom: 30px;
+  color: #2e3c56;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 36px;
+}
+.loginblock__h2 {
+  margin-top: 4px;
+  color: #8f99aa;
+  font-size: 14px;
+  line-height: 21px;
+}
+.loginblock__form {
+  padding-top: 36px;
+}
+.formitem {
+  padding-bottom: 24px;
+  position: relative;
+}
+.formitem input {
+  outline: none;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 100px #fff;
+  border: 1px solid #dde0e6;
+  box-sizing: border-box;
+  color: #484c53;
+  font-size: 15px;
+  line-height: 26px;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+.formitem input:focus {
+  border-color: #9d9fa3;
+}
+.loginblock__bottom {
+  justify-content: space-between;
+  padding-bottom: 24px;
+}
+.formcheckbox {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.formcheckbox input {
+  position: absolute;
+  /* visibility: hidden; */
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.formcheckbox:focus-within {
+  outline: 2px dotted #afb3b9;
+  outline-offset: 2px;
+}
+.formcheckbox input + span {
+  height: 21px;
+  color: #8f99aa;
+  font-size: 12px;
+  line-height: 21px;
+  position: relative;
+  align-items: center;
+  user-select: none;
+}
+.formcheckbox input:checked + span {
+  color: #2e3c56;
+}
+.checkplace {
+  display: flex;
+  background: #ffffff;
+  border: 1px solid #dde0e6;
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  margin-right: 1rem;
+}
+.checkplace img {
+  display: block;
+  max-width: 90%;
+  max-height: 95%;
+  margin: auto;
+  opacity: 0;
+}
+.formcheckbox input:checked + span .checkplace {
+  border-color: #9d9fa3;
+}
+.formcheckbox input:checked + span .checkplace img {
+  opacity: 1;
+}
+.loginblock__link {
+  display: block;
+  color: #2e3c56;
+  font-size: 12px;
+  line-height: 21px;
+}
+.formsubmit {
+}
+.formsubmit .button {
+  width: 100%;
+  height: 56px;
+  font-weight: 500;
+  background-color: $darkColor;
+  color: white;
+}
+.make-order {
+  display: flex;
+  flex-direction: column;
+  @include adaptiveValue("padding", 50, 20);
+  gap: 20px;
+  &__title {
+    @include adaptiveValue("font-size", 32, 20);
+    line-height: em(48, 32);
+    color: $darkColor;
+    align-self: center;
+  }
+}

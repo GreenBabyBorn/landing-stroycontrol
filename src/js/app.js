@@ -1,3 +1,4 @@
+// import "./libs/aos.js";
 import * as functions from "./modules/functions.js";
 
 // import "../scss/style.scss";
@@ -14,7 +15,7 @@ functions.menuOpen();
 
 /* Динамический адаптив */
 import "./libs/dynamic_adapt.js";
-
+import "./modules/popups.js";
 /* Слайдер Swiper */
 import "./libs/swiper.js";
 

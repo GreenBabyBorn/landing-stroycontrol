@@ -14,7 +14,7 @@ import "../libs/smoothScroll.js";
 export let gotoBlock = (
   targetBlock,
   noHeader = false,
-  speed = 100,
+  speed = 500,
   offset = 0
 ) => {
   let headerItem = "";
