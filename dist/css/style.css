@@ -2147,7 +2147,7 @@ hr {
   .menu__body {
     position: fixed;
     overflow: auto;
-    padding: 5.625rem 0.9375rem 3.125rem 0.9375rem;
+    padding: 6.25rem 0.9375rem 3.125rem 0.9375rem;
     background-color: rgba(255, 255, 255, 0.7);
     z-index: 5;
     top: 0;
@@ -2179,7 +2179,7 @@ hr {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    row-gap: 1.25rem;
+    row-gap: 1.5625rem;
   }
 
   .menu__link {
@@ -2395,7 +2395,7 @@ hr {
   }
 
   .menu__link {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -3201,7 +3201,7 @@ hr {
 
   .menu__link {
     font-size: calc(
-        1.125rem + 0.375 *
+        1.25rem + 0.25 *
           (((100vw - 20rem)) / ((47.875)))
       );
   }

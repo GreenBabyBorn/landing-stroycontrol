@@ -76,7 +76,7 @@
     @media (max-width: $tablet) {
       position: fixed;
       overflow: auto;
-      padding: rem(90) rem(15) rem(50) rem(15);
+      padding: rem(100) rem(15) rem(50) rem(15);
       background-color: rgba($color: #ffffff, $alpha: 0.7);
       z-index: 5;
       top: 0;
@@ -112,7 +112,7 @@
     flex-wrap: wrap;
     @media (max-width: $tablet) {
       flex-direction: column;
-      row-gap: rem(20);
+      row-gap: rem(25);
     }
   }
   &__item {
@@ -126,7 +126,7 @@
       // font-weight: 600;
     }
     @media (max-width: $tablet) {
-      @include adaptiveValue("font-size", 24, 18);
+      @include adaptiveValue("font-size", 24, 20);
       color: $darkColor;
     }
     @media (any-hover: hover) {
